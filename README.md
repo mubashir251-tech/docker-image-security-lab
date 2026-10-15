@@ -1,11 +1,10 @@
 # Docker Image Security Scanning & Vulnerability Management
-[![Docker Image Security](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml/badge.svg)](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml)
-
-**A hands-on DevSecOps lab** demonstrating Docker image vulnerability scanning, automated security policy enforcement, Python unit testing, and GitHub Actions CI.
 
 [![Docker Image Security](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml/badge.svg)](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml)
 
-A hands-on container security project demonstrating vulnerability scanning, security reporting, policy enforcement, and CI integration using **Trivy, Grype, Docker, Python, and GitHub Actions**.
+A hands-on **DevSecOps and container security project** demonstrating Docker image vulnerability scanning, security reporting, automated policy enforcement, unit testing, and continuous integration.
+
+**Tech stack:** Docker · Trivy · Grype · Python · PyYAML · GitHub Actions
 
 ## Overview
 
