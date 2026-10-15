@@ -25,7 +25,7 @@ jobs:
         run: docker build -t lab-security-image:${{ github.sha }} .
 
       - name: Scan image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@0.36.0
         with:
           image-ref: lab-security-image:${{ github.sha }}
           format: json
@@ -41,7 +41,6 @@ jobs:
           path: trivy-results.json
           if-no-files-found: warn
 
-      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
