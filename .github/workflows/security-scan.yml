@@ -52,3 +52,4 @@ jobs:
 
       - name: Enforce vulnerability policy
         run: python3 policy_gate.py trivy-results.json policy.yaml
+
