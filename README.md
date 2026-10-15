@@ -1,4 +1,7 @@
 # Docker Image Security Scanning & Vulnerability Management
+[![Docker Image Security](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml/badge.svg)](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml)
+
+**A hands-on DevSecOps lab** demonstrating Docker image vulnerability scanning, automated security policy enforcement, Python unit testing, and GitHub Actions CI.
 
 [![Docker Image Security](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml/badge.svg)](https://github.com/mubashir251-tech/docker-image-security-lab/actions/workflows/security-scan.yml)
 
