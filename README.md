@@ -10,22 +10,33 @@ Container images can contain vulnerable operating-system packages and applicatio
 
 ## Architecture
 
+The pipeline builds a Docker image, scans it for vulnerabilities, runs automated policy tests, and enforces security thresholds through GitHub Actions.
+
 ```mermaid
 flowchart TD
-    A[Dockerfile and Base Image] --> B[Build Docker Image]
-    B --> C[Trivy Scan]
-    B --> D[Grype Scan]
-    C --> E[JSON Vulnerability Reports]
-    D --> E
-    E --> F[Markdown Summary]
-    C --> G[Python Policy Gate]
-    H[policy.yaml] --> G
-    G --> I{Policy Result}
-    I -->|Pass| J[CI Continues]
-    I -->|Fail| K[CI Fails]
-    L[GitHub Push or Pull Request] --> M[GitHub Actions]
-    M --> B
+    A["Developer pushes code<br/>or opens a pull request"] --> B["GitHub Actions"]
+    B --> C["Build Docker Image"]
+    C --> D["Trivy Vulnerability Scan"]
+    D --> E["Generate JSON Scan Report"]
+    E --> F["Upload Report as Artifact"]
+    E --> G["Run Python Unit Tests"]
+    G --> H["Policy Gate<br/>policy_gate.py"]
+    I["Security Thresholds<br/>policy.yaml"] --> H
+    H --> J{"Policy Passed?"}
+    J -->|Yes| K["Pipeline Passes"]
+    J -->|No| L["Pipeline Fails"]
 ```
+
+### Pipeline stages
+
+1. **Build:** Build the Docker image from the repository's Dockerfile.
+2. **Scan:** Trivy identifies known vulnerabilities and generates a JSON report.
+3. **Report:** Upload the scan report as a GitHub Actions artifact.
+4. **Test:** Run automated tests against the policy-gate logic.
+5. **Enforce:** Compare vulnerability counts against the thresholds in `policy.yaml`.
+6. **Decide:** Pass or fail the workflow based on the configured security policy.
+
+**Note:** Grype is used for the lab's broader image-comparison scans; the current GitHub Actions workflow uses Trivy for its automated image scan.
 
 ## Technology Stack
 
