@@ -1,0 +1,9 @@
+
+fail_on:
+  critical_count_exceeds: 0
+  high_count_exceeds: 10
+
+warn_on:
+  medium_count_exceeds: 50
+
+report_label: "Lab 34 Docker Image Security"

@@ -1,0 +1,13 @@
+
+# Generated scanner reports
+reports/*.json
+reports/*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
