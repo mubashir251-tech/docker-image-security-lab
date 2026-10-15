@@ -1,5 +1,4 @@
 
-```python
 import json
 import subprocess
 import sys
@@ -100,4 +99,3 @@ class TestPolicyGate(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-```
